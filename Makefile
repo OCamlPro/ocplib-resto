@@ -1,17 +1,13 @@
+.PHONY: all test doc-html clean
 
 all:
-	ocp-build init
-	ocp-build build ocplib-resto ocplib-resto-directory
+	dune build
 
 test:
-	ocp-build init
-	ocp-build build test
-	./_obuild/test/test.byte
+	dune runtest
+
+doc-html:
+	dune build @doc
 
 clean:
-	[ ! -d _obuild ] || ocp-build clean
-
-distclean:
-	-rm -rf _obuild
-	-rm -rf */*~ *~
-
+	dune clean

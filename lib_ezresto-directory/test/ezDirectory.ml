@@ -8,23 +8,25 @@
 (*                                                                        *)
 (**************************************************************************)
 
-open Resto
+open EzServices
+include EzResto_directory
 
-type json = Json_repr.Ezjsonm.value
-module Arg = Arg
-module Path = struct
-  type 'params path = (unit, 'params) Path.path
-  let root = Path.root
-  let add_suffix = Path.add_suffix
-  let add_arg = Path.add_arg
-  let (/) = add_suffix
-  let (/:) = add_arg
-  let map = Path.map
-end
-type ('params, 'input, 'output) service =
-  (unit, 'params, 'input, 'output) Resto.service
-let service = service
-let forge_request = forge_request
-let read_answer = read_answer
-module Description = Description
-module Make = Make
+let rec repeat i json =
+  if i <= 0 then []
+  else json :: repeat (i-1) json
+
+let dir = empty let dir =
+                  register1 dir repeat_service
+                    (fun i () json -> Lwt.return (`Ok (`A (repeat i json))))
+let dir =
+  register1 dir add_service
+    (fun i () j -> Lwt.return (`Ok (i+j)))
+let dir =
+  register2 dir alternate_add_service
+    (fun i j () () -> Lwt.return (`Ok (float_of_int i+.j)))
+let dir =
+  register dir alternate_add_service'
+    (fun (((), i),j) () () -> Lwt.return (`Ok (i+ int_of_float j)))
+let dir =
+  register_describe_directory_service
+    dir describe_service

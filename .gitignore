@@ -1,3 +1,4 @@
-
 *~
-_obuild
+_build/
+dune-project
+
