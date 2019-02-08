@@ -18,3 +18,4 @@ depends: [
   "ocplib-resto-directory"
   "cohttp-lwt-unix" { >= "1.0.0" }
 ]
+synopsis: "CoHTTP backend for ocplib-resto"

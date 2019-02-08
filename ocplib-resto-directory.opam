@@ -19,3 +19,4 @@ depends: [
   "ocplib-resto-json" {test}
   "lwt" { >= "3.0.0" }
 ]
+synopsis: "Minimal OCaml library to define type-safe HTTP/JSON RPC catalogs"

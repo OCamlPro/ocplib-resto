@@ -19,3 +19,4 @@ depends: [
   "ocplib-resto"
   "ocplib-json-typed-bson" { >= "0.7" }
 ]
+synopsis: "JSON/BSON encoders for some ocplib-resto RPC"

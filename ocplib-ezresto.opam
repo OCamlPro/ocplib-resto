@@ -18,3 +18,4 @@ depends: [
   "ocplib-resto"
   "ocplib-resto-json"
 ]
+synopsis: "Instantiation of ocplib-resto with ocplib-json-typed based encoders"

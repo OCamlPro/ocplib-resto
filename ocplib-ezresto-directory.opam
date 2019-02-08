@@ -18,3 +18,4 @@ depends: [
   "ocplib-ezresto"
   "ocplib-resto-directory"
 ]
+synopsis: "Ocplib-resto-directory with ocplib-json-typed based encoders"

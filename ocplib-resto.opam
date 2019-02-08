@@ -17,3 +17,4 @@ depends: [
   "dune" {build}
   "uri"
 ]
+synopsis: "Minimal OCaml library for type-safe HTTP/JSON RPCs"
