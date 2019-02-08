@@ -16,7 +16,7 @@ run-test: [
 depends: [
   "dune" {build}
   "ocplib-resto"
-  "ocplib-resto-json" {test}
+  "ocplib-resto-json" {with-test}
   "lwt" { >= "3.0.0" }
 ]
 synopsis: "Minimal OCaml library to define type-safe HTTP/JSON RPC catalogs"
