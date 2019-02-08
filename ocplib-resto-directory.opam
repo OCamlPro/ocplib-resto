@@ -1,4 +1,5 @@
 opam-version: "2.0"
+version: "0.2"
 maintainer: "Grégoire Henry <gregoire.henry@tezos.com>"
 authors: "Grégoire Henry <gregoire.henry@tezos.com>"
 license: "LGPL-2.1-with-OCaml-exception"
@@ -15,8 +16,8 @@ run-test: [
 
 depends: [
   "dune" {build}
-  "ocplib-resto"
-  "ocplib-resto-json" {with-test}
+  "ocplib-resto" { = "0.2" }
+  "ocplib-resto-json" {= "0.2" & with-test}
   "lwt" { >= "3.0.0" }
 ]
 synopsis: "Minimal OCaml library to define type-safe HTTP/JSON RPC catalogs"

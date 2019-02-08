@@ -1,4 +1,5 @@
 opam-version: "2.0"
+version: "0.2"
 maintainer: "Grégoire Henry <gregoire.henry@tezos.com>"
 authors: "Grégoire Henry <gregoire.henry@tezos.com>"
 license: "LGPL-2.1-with-OCaml-exception"
@@ -15,7 +16,7 @@ run-test: [
 
 depends: [
   "dune" {build}
-  "ocplib-resto-directory"
+  "ocplib-resto-directory" { = "0.2" }
   "cohttp-lwt-unix" { >= "1.0.0" }
 ]
 synopsis: "CoHTTP backend for ocplib-resto"

@@ -1,4 +1,5 @@
 opam-version: "2.0"
+version: "0.2"
 maintainer: "Grégoire Henry <gregoire.henry@tezos.com>"
 authors: "Grégoire Henry <gregoire.henry@tezos.com>"
 license: "LGPL-2.1-with-OCaml-exception"
@@ -15,7 +16,7 @@ run-test: [
 
 depends: [
   "dune" {build}
-  "ocplib-ezresto"
-  "ocplib-resto-directory"
+  "ocplib-ezresto" { = "0.2" }
+  "ocplib-resto-directory" { = "0.2" }
 ]
 synopsis: "Ocplib-resto-directory with ocplib-json-typed based encoders"
