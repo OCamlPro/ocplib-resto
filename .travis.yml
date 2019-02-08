@@ -6,7 +6,13 @@ install: wget https://raw.githubusercontent.com/ocaml/ocaml-travisci-skeleton/ma
 script: bash ./.travis-docker.sh
 env:
   global:
-    - PACKAGE="ocplib-resto"
+    - PINS="ocplib-resto-json:. ocplib-ezresto:. ocplib-resto-directory:. ocplib-resto:." DISTRO=debian-stable
   matrix:
-    - DISTRO=debian-stable OCAML_VERSION=4.03.0
-    - DISTRO=debian-stable OCAML_VERSION=4.02.3
+    - PACKAGE="ocplib-resto" OCAML_VERSION=4.03
+    - PACKAGE="ocplib-resto-directory" OCAML_VERSION=4.03
+    - PACKAGE="ocplib-ezresto" OCAML_VERSION=4.03
+    - PACKAGE="ocplib-resto-json" OCAML_VERSION=4.03
+    - PACKAGE="ocplib-resto-cohttp" OCAML_VERSION=4.03
+    - PACKAGE="ocplib-ezresto-directory" OCAML_VERSION=4.03
+    - PACKAGE="ocplib-resto-cohttp" OCAML_VERSION=4.07
+    - PACKAGE="ocplib-ezresto-directory" OCAML_VERSION=4.07
