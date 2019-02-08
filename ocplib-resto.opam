@@ -15,6 +15,6 @@ run-test: [
 
 depends: [
   "dune" {build}
-  "uri"
+  "uri" { >= "1.9.0" }
 ]
 synopsis: "Minimal OCaml library for type-safe HTTP/JSON RPCs"
