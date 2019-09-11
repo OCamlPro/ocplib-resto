@@ -12,5 +12,7 @@ build: [[ "dune" "build" "-p" name "-j" jobs "@install" ]]
 depends: [
   "ocamlfind" {build}
   "dune" {build}
-  "uri" {>= "1.9.0" }
+  "ocplib-resto" {= "dev" }
+  "ocplib-resto-json" {= "dev" & with-test }
+  "lwt" { >= "3.0.0" }
 ]

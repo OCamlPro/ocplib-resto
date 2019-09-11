@@ -1,17 +1,13 @@
 
 all:
-	ocp-build init
-	ocp-build build ocplib-resto ocplib-resto-directory
+	dune build --dev
 
+.PHONY: test
 test:
-	ocp-build init
-	ocp-build build test
-	./_obuild/test/test.byte
+	dune runtest --dev
+
+doc-html:
+	dune build @doc --dev
 
 clean:
-	[ ! -d _obuild ] || ocp-build clean
-
-distclean:
-	-rm -rf _obuild
-	-rm -rf */*~ *~
-
+	dune clean

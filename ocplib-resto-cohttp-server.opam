@@ -6,11 +6,16 @@ license: "LGPL-2.1-with-OCaml-exception"
 homepage: "https://github.com/OCamlPro/ocplib-resto"
 bug-reports: "https://github.com/OCamlPro/ocplib-resto/issues"
 dev-repo: "git+https://github.com/OCamlPro/ocplib-resto"
-synopsis: "A minimal OCaml library for type-safe HTTP/JSON RPCs"
 
-build: [[ "dune" "build" "-p" name "-j" jobs "@install" ]]
+build: [
+  [ "dune" "build" "-p" name "-j" jobs ]
+]
+
 depends: [
   "ocamlfind" {build}
   "dune" {build}
-  "uri" {>= "1.9.0" }
+  "ocplib-resto-directory" {= "dev" }
+  "ocplib-resto-cohttp" {= "dev" }
+  "cohttp-lwt-unix" { >= "1.0.0" }
 ]
+synopsis: "A minimal OCaml library for type-safe HTTP/JSON RPCs - server library"
